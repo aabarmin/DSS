@@ -26,7 +26,7 @@
                 )); ?>
 
                 <?php echo $form->textFieldRow(Yii::app()->BSiteFunctions->getSearchObject(), 'query', array('class'=>'input-xxlarge', 'prepend'=>'<i class="icon-search"></i>')); ?>
-                <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'label'=>'Go')); ?>
+                <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'label'=>'Поиск')); ?>
 
                 <?php $this->endWidget(); ?>
             </div>
