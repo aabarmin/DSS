@@ -1,22 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "{{taxonomy}}".
+ * This is the model class for table "{{taxonomy_term}}".
  *
- * The followings are the available columns in table '{{taxonomy}}':
+ * The followings are the available columns in table '{{taxonomy_term}}':
  * @property string $id
- * @property string $title
- * @property string $alias
- * @property array $terms
+ * @property integer $taxonomy_id
+ * @property string $term_name
+ * @property string $term_alias
  */
-class Taxonomy extends CActiveRecord
+class TaxonomyTerm extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{taxonomy}}';
+		return '{{taxonomy_term}}';
 	}
 
 	/**
@@ -27,10 +27,14 @@ class Taxonomy extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, alias', 'length', 'max'=>255),
+			array('taxonomy_id', 'numerical', 'integerOnly'=>true),
+			array('term_name, term_alias', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, alias', 'safe', 'on'=>'search'),
+			array('id, taxonomy_id, term_name, term_alias', 'safe', 'on'=>'search'),
+
+            array('taxonomy_id', 'required'),
+            array('term_name', 'required')
 		);
 	}
 
@@ -42,7 +46,6 @@ class Taxonomy extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-            'terms' => array(self::HAS_MANY, 'TaxonomyTerm', 'taxonomy_id')
 		);
 	}
 
@@ -53,8 +56,9 @@ class Taxonomy extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'alias' => 'Alias',
+			'taxonomy_id' => 'Taxonomy',
+			'term_name' => 'Term Name',
+			'term_alias' => 'Term Alias',
 		);
 	}
 
@@ -77,8 +81,9 @@ class Taxonomy extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('alias',$this->alias,true);
+		$criteria->compare('taxonomy_id',$this->taxonomy_id);
+		$criteria->compare('term_name',$this->term_name,true);
+		$criteria->compare('term_alias',$this->term_alias,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -89,7 +94,7 @@ class Taxonomy extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Taxonomy the static model class
+	 * @return TaxonomyTerm the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
