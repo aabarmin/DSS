@@ -38,3 +38,6 @@ html,body
 .column-menu {
     background: green;
 }
+a{
+    color: #2A9758 !important;
+}
