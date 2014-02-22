@@ -461,3 +461,628 @@ Stack trace:
 REQUEST_URI=/apps/dss/index.php?r=taxonomy/view&id=2
 HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomyTerm/create&id=2
 ---
+2014/02/22 21:41:57 [error] [exception.CException] exception 'CException' with message 'Property "CMenu.type" is not defined.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php:173
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWidgetFactory.php(161): CComponent->__set('type', 'list')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'zii.widgets.CMe...', Array)
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.CMe...', Array)
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(46): CBaseController->widget('zii.widgets.CMe...', Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): COutputProcessor->run()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): CController->render('index')
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('')
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/apps/dss/
+---
+2014/02/22 21:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "taxonomy/index".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/index')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/index
+HTTP_REFERER=http://lesenok.local/apps/dss/
+---
+2014/02/22 21:42:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/taxono...')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy
+---
+2014/02/22 21:43:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/taxono...')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy
+---
+2014/02/22 21:43:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/taxono...')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy
+---
+2014/02/22 21:43:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/taxono...')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy
+---
+2014/02/22 21:43:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/taxono...')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy/index
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy
+---
+2014/02/22 21:43:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/taxono...')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy/index
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy
+---
+2014/02/22 21:43:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/taxono...')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy/index
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy
+---
+2014/02/22 21:43:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('site/taxonomy')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=site/taxonomy
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy/index
+---
+2014/02/22 21:43:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('site/taxonomy')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=site/taxonomy
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy/index
+---
+2014/02/22 22:06:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "taxonomy".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:483
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(270): CController->missingAction('taxonomy')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('taxonomy')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('site/taxonomy')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/apps/dss/index.php?r=site/taxonomy
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy/taxonomy/index
+---
+2014/02/22 22:08:47 [error] [php] Illegal string offset 'id' (/Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CMenu.php:157)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(42): SiteController->widget()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): SiteController->render()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (42)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php (32)
+2014/02/22 22:31:03 [error] [php] include(CMenu.php): failed to open stream: No such file or directory (/Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/components/BMenuWidget.php(10): spl_autoload_call()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/YiiBase.php(320): require()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWidgetFactory.php(146): import()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(172): SiteController->createWidget()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(43): SiteController->widget()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): SiteController->render()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/components/BMenuWidget.php (10)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (43)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+2014/02/22 22:31:12 [error] [php] include(CMenu.php): failed to open stream: No such file or directory (/Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/components/BMenuWidget.php(10): spl_autoload_call()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/YiiBase.php(320): require()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWidgetFactory.php(146): import()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(172): SiteController->createWidget()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(45): SiteController->widget()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): SiteController->render()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/components/BMenuWidget.php (10)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (45)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+2014/02/22 22:31:12 [error] [php] include(CMenu.php): failed to open stream: No such file or directory (/Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/components/BMenuWidget.php(10): spl_autoload_call()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/YiiBase.php(320): require()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWidgetFactory.php(146): import()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(172): SiteController->createWidget()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(45): SiteController->widget()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): SiteController->render()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/components/BMenuWidget.php (10)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (45)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+2014/02/22 22:31:35 [error] [php] include(CMenu.php): failed to open stream: No such file or directory (/Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/components/BMenuWidget.php(10): spl_autoload_call()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/YiiBase.php(320): require()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWidgetFactory.php(146): import()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(172): SiteController->createWidget()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(43): SiteController->widget()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): SiteController->render()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/components/BMenuWidget.php (10)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (43)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+2014/02/22 22:35:06 [error] [php] Undefined variable: model (/Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php:38)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): SiteController->render()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (38)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php (32)
+2014/02/22 22:35:51 [error] [exception.CException] exception 'CException' with message 'TbInput: Failed to initialize widget! Model is not set.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/input/TbInput.php:96
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(147): TbInput->init()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/TbActiveForm.php(497): CBaseController->widget('bootstrap.widge...', Array)
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/TbActiveForm.php(186): TbActiveForm->inputRow('text', NULL, 'textField', NULL, Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(38): TbActiveForm->textFieldRow(NULL, 'textField', Array)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): COutputProcessor->run()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): CController->render('index')
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('')
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/apps/dss/index.php
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=site/taxonomy
+---
+2014/02/22 22:36:09 [error] [php] include(CTaxonomy.php): failed to open stream: No such file or directory (/Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(38): spl_autoload_call()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): SiteController->render()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (38)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php (32)
+2014/02/22 22:37:25 [error] [php] Undefined variable: searchModel (/Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php:38)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(34): SiteController->render()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (38)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php (34)
+2014/02/22 22:38:06 [error] [php] Undefined variable: model (/Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php:38)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(34): SiteController->render()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (38)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php (34)
+2014/02/22 22:38:09 [error] [php] Undefined variable: searchModel (/Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php:38)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(34): SiteController->render()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (38)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php (34)
+2014/02/22 22:38:47 [error] [php] Undefined variable: searchModel (/Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php:38)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): SiteController->endContent()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(35): SiteController->render()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): SiteController->runAction()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php (38)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php (6)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php (35)
+2014/02/22 22:42:20 [error] [exception.CException] exception 'CException' with message 'TbInput: Failed to initialize widget! Model is not set.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/input/TbInput.php:96
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(147): TbInput->init()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/TbActiveForm.php(497): CBaseController->widget('bootstrap.widge...', Array)
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/TbActiveForm.php(186): TbActiveForm->inputRow('text', NULL, 'query', NULL, Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(38): TbActiveForm->textFieldRow(NULL, 'query', Array)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): COutputProcessor->run()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(33): CController->render('index')
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('')
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/apps/dss/index.php
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=site/taxonomy
+---
+2014/02/22 22:42:41 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "index".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:878
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(40): CController->render('index')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('')
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/apps/dss/index.php
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=site/taxonomy
+---
+2014/02/22 22:42:51 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "index".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:878
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(40): CController->render('index')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('')
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/apps/dss/
+---
+2014/02/22 22:43:58 [error] [exception.CException] exception 'CException' with message 'Property "SiteController.searchModel" is not defined.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(38): CComponent->__get('searchModel')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): COutputProcessor->run()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(32): CController->render('index')
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('')
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/apps/dss/
+---
+2014/02/22 22:48:25 [error] [php] Undefined variable: searchModel (/Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/column2.php:25)
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): TaxonomyController->renderFile()
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/modules/taxonomy/controllers/TaxonomyController.php(133): TaxonomyController->render()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): TaxonomyController->actionIndex()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): TaxonomyController->runAction()
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): TaxonomyController->filterAccessControl()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): TaxonomyController->runActionWithFilters()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): TaxonomyController->run()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CWebApplication->run()
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/taxonomy
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/column2.php (25)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/modules/taxonomy/controllers/TaxonomyController.php (133)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php (13)
+2014/02/22 22:58:52 [error] [exception.CException] exception 'CException' with message 'Property "CSearchModel.textField" is not defined.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/helpers/CHtml.php(2529): CComponent->__get('textField')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(CSearchModel), 'textField')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(CSearchModel), 'textField', Array)
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(CSearchModel), 'textField', Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/input/TbInputInline.php(58): CActiveForm->textField(Object(CSearchModel), 'textField', Array)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/input/TbInput.php(230): TbInputInline->textField()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(173): TbInput->run()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/TbActiveForm.php(497): CBaseController->widget('bootstrap.widge...', Array)
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/TbActiveForm.php(186): TbActiveForm->inputRow('text', Object(CSearchModel), 'textField', NULL, Array)
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/themes/bootstrap/views/layouts/main.php(38): TbActiveForm->textFieldRow(Object(CSearchModel), 'textField', Array)
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(206): COutputProcessor->run()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(784): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/SiteController.php(34): CController->render('index', Array)
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#25 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('')
+#27 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#28 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#29 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/apps/dss/index.php?
+---

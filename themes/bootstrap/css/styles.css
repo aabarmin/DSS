@@ -1,3 +1,33 @@
+html,body
+{
+    height: 100%;
+}
+
 #page {
-    padding-top: 60px;
+    <!-- padding-top: 60px; -->
+}
+
+.menu_main {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 15px;
+}
+
+.menu_main img {
+    width: 48px;
+}
+
+.container-header {
+    padding-top: 10px;
+    background: #c0c0c0;
+    margin-bottom: 10px;
+}
+
+.container-site {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.column-menu {
+    background: green;
 }

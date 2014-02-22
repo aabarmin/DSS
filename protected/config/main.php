@@ -34,7 +34,8 @@ return array(
 		),
 
         // мои модули, решил заранее разделить приложения на модули
-        'taxonomy'
+        'taxonomy',
+        'project'
 	),
 
 	// application components
@@ -88,6 +89,11 @@ return array(
         'bootstrap'=>array(
             'class'=>'bootstrap.components.Bootstrap',
         ),
+
+        // мои расширения
+        'BSiteFunctions' => array(
+            'class' => 'application.components.BSiteFunctions'
+        )
 	),
 
     'theme'=>'bootstrap',

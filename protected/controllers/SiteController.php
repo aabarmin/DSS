@@ -2,7 +2,9 @@
 
 class SiteController extends Controller
 {
-	/**
+    public $layout='//layouts/column2';
+
+    /**
 	 * Declares class-based actions.
 	 */
 	public function actions()
@@ -29,7 +31,9 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+        $this->render('index', array(
+            "searchModel" => new CSearchModel()
+        ));
 	}
 
 	/**
