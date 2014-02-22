@@ -71,7 +71,7 @@ class TaxonomyTermController extends Controller
 		{
 			$model->attributes=$_POST['TaxonomyTerm'];
 			if($model->save())
-                $this->redirect(array('/taxonomy/view', 'id' => $model->taxonomy_id));
+                $this->redirect(array('/taxonomy/taxonomy/view', 'id' => $model->taxonomy_id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class TaxonomyTermController extends Controller
 		{
 			$model->attributes=$_POST['TaxonomyTerm'];
 			if($model->save())
-                $this->redirect(array('/taxonomy/view', 'id' => $model->taxonomy_id));
+                $this->redirect(array('/taxonomy/taxonomy/view', 'id' => $model->taxonomy_id));
 		}
 
 		$this->render('update',array(

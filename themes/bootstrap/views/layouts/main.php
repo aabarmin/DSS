@@ -21,7 +21,7 @@
             'items'=>array(
                 array('label'=>'Главная', 'url'=>array('/site/index')),
                 array('label' => 'Модули', 'url' => '#', 'items' => array(
-                    array('label' => 'Словари', 'url' => array('/taxonomy/index'))
+                    array('label' => 'Словари', 'url' => array('/taxonomy/'))
                 )),
                 array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                 array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)

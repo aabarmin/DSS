@@ -407,3 +407,57 @@ REQUEST_URI=/apps/dss/index.php?r=taxonomy/view&id=2
 in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/TbButtonColumn.php (60)
 in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/taxonomy/view.php (58)
 in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/TaxonomyController.php (55)
+2014/02/22 21:23:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "taxonomy/index".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/index')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/index
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy
+---
+2014/02/22 21:26:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "taxonomy/index".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/index')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/index
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=site/index
+---
+2014/02/22 21:27:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "taxonomy/index".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/index')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/index
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=site/index
+---
+2014/02/22 21:27:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "taxonomyTerm/create".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomyTerm/cr...')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomyTerm/create&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomy/view&id=2
+---
+2014/02/22 21:28:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "taxonomy/view".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/view')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/view&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomyTerm/create&id=2
+---
+2014/02/22 21:28:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "taxonomy/view".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('taxonomy/view')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/apps/dss/index.php?r=taxonomy/view&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=taxonomy/taxonomyTerm/create&id=2
+---

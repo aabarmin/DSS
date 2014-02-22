@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'Delete Taxonomy','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Taxonomy','url'=>array('admin')),
 
-    array('label' => 'Добавить термин', 'url' => array('/taxonomyTerm/create', 'id' => $model->id))
+    array('label' => 'Добавить термин', 'url' => array('taxonomyTerm/create', 'id' => $model->id))
 );
 ?>
 
@@ -50,10 +50,10 @@ $this->menu=array(
                     'visible' => 'false'
                 ),
                 'update' => array(
-                    'url' => 'Yii::app()->controller->createUrl("/taxonomyTerm/update", array("id"=>$data->primaryKey))'
+                    'url' => 'Yii::app()->controller->createUrl("taxonomyTerm/update", array("id"=>$data->primaryKey))'
                 ),
                 'delete' => array(
-                    'url' => 'Yii::app()->controller->createUrl("/taxonomyTerm/delete", array("id"=>$data->primaryKey))'
+                    'url' => 'Yii::app()->controller->createUrl("taxonomyTerm/delete", array("id"=>$data->primaryKey))'
                 )
             )
         )

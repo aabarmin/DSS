@@ -32,6 +32,9 @@ return array(
                 'bootstrap.gii',
             ),
 		),
+
+        // мои модули, решил заранее разделить приложения на модули
+        'taxonomy'
 	),
 
 	// application components
