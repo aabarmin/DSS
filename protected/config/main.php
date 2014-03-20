@@ -96,7 +96,7 @@ return array(
         )
 	),
 
-    'theme'=>'bootstrap',
+    'theme'=>'acme',
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
