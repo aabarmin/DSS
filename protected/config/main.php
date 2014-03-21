@@ -5,6 +5,7 @@
 
 // Подключаем twitter bootstrap
 Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
+Yii::setPathOfAlias('dss', dirname(__FILE__).'/../components/dss');
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -34,8 +35,7 @@ return array(
 		),
 
         // мои модули, решил заранее разделить приложения на модули
-        'taxonomy',
-        'project'
+        'taxonomy'
 	),
 
 	// application components
@@ -63,7 +63,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=lesenok_20140222',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
             'tablePrefix' => 'data_'
 		),

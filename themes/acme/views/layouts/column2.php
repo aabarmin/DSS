@@ -1,7 +1,7 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
 	<!-- start: Header -->
-	<?php $this->widget('application.components.dss.widgets.MainNavbarWidget', array(
+	<?php $this->widget('dss.widgets.MainNavbarWidget', array(
 	
 	)); ?>	
 	<!-- start: Header -->
@@ -11,7 +11,7 @@
     	<div class="row-fluid">
     		<!-- start: Main Menu -->			
 			<div id="sidebar-left" class="span1">
-				<?php $this->widget('application.components.dss.widgets.MainMenuWidget', array(
+				<?php $this->widget('dss.widgets.MainMenuWidget', array(
 	                    'htmlOptions' => array(
 	                        'class' => 'menu_main'
 	                    ),
@@ -21,6 +21,11 @@
 	                        	'label'=>'Главная', 
 	                        	'icon'=>'fa-icon-tasks', 
 	                        	'url'=>array('/')
+							),
+							array(
+	                        	'label'=>'Проекты', 
+	                        	'icon'=>'fa-icon-tasks', 
+	                        	'url'=>array('/project')
 							),
 	                        array(
 	                        	'label'=>'Таксономия', 
@@ -47,7 +52,7 @@
 		    </div>
 		    <!-- end: Content -->
 		    <!-- start: Widgets Area -->
-		    <?php $this->widget('application.components.dss.widgets.MainSidebarWidget', array(
+		    <?php $this->widget('dss.widgets.MainSidebarWidget', array(
 			
 			)); ?>	
 		    <!-- end: Widgets Area -->				
