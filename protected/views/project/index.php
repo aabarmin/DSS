@@ -4,8 +4,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Project','url'=>array('create')),
-	array('label'=>'Manage Project','url'=>array('admin')),
+	array('label'=>'Добавить проект','url'=>array('create')),
+	array('label'=>'Управление проектами','url'=>array('admin')),
 );
 ?>
 

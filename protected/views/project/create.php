@@ -5,11 +5,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Project','url'=>array('index')),
-	array('label'=>'Manage Project','url'=>array('admin')),
+	array('label'=>'Управление проектами','url'=>array('admin')),
 );
 ?>
 
-<h1>Create Project</h1>
+<h1>Создание проекта</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -20,6 +20,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'application.modules.taxonomy.models.*'
 	),
 
 	'modules'=>array(
@@ -63,7 +64,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=lesenok_20140222',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'charset' => 'utf8',
             'tablePrefix' => 'data_'
 		),

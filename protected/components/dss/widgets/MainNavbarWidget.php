@@ -109,7 +109,7 @@ class MainNavbarWidget extends CWidget {
 		 */
 	}
 	private function displayMenuInformationNotifications() {
-		/**
+        echo '
 <li class="dropdown hidden-phone">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="halflings-icon white warning-sign"></i>
@@ -173,7 +173,7 @@ class MainNavbarWidget extends CWidget {
 								</li>	
 							</ul>
 						</li>
-		 */
+		 ';
 	}
 	private function displayMenuInformationMessages() {
 		/**
@@ -279,9 +279,9 @@ class MainNavbarWidget extends CWidget {
 		echo CHtml::openTag("ul", array(
 			'class' => "nav pull-right"
 		));
-		//$this->displayMenuInformationNotifications();
+		// $this->displayMenuInformationNotifications();
 		$this->displayMenuInformationSettings();
-		$this->displayMenuInformationUser();
+		// $this->displayMenuInformationUser();
 		echo CHtml::closeTag("ul");
 		echo CHtml::closeTag("div");
 	}

@@ -25,12 +25,12 @@
 							array(
 	                        	'label'=>'Проекты', 
 	                        	'icon'=>'fa-icon-tasks', 
-	                        	'url'=>array('/project')
+	                        	'url'=>array('/project/admin')
 							),
 	                        array(
 	                        	'label'=>'Таксономия', 
 	                        	'icon'=>'fa-icon-tasks', 
-	                        	'url'=>array('/taxonomy')
+	                        	'url'=>array('/taxonomy/taxonomy/admin')
 							),
 	                    ),
 	            )); ?>				
@@ -47,6 +47,11 @@
 		    <!-- start: Content -->
 			<div id="content" class="span11">
 				<div class="row-fluid">
+                    <?php $this->widget('bootstrap.widgets.TbMenu', array(
+                        'type'=>'pills',
+                        'stacked'=>false, // whether this is a stacked menu
+                        'items'=> $this->menu,
+                    )); ?>
 					<?php echo $content; ?>
 				</div>
 		    </div>

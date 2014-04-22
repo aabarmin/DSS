@@ -31,6 +31,8 @@ class Taxonomy extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, alias', 'safe', 'on'=>'search'),
+
+            array("title", "required")
 		);
 	}
 
@@ -53,8 +55,8 @@ class Taxonomy extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'alias' => 'Alias',
+			'title' => 'Название таксономии',
+			'alias' => 'Псевдоним таксономии',
 		);
 	}
 

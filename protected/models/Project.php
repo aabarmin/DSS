@@ -6,7 +6,6 @@
  * The followings are the available columns in table '{{project}}':
  * @property string $id
  * @property string $project_title
- * @property string $project_cost
  * @property string $project_start
  * @property string $project_finish
  * @property integer $project_status_id
@@ -32,11 +31,15 @@ class Project extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('project_status_id, project_type_id, project_size_id', 'numerical', 'integerOnly'=>true),
-			array('project_cost', 'length', 'max'=>255),
-			array('project_title, project_start, project_finish', 'safe'),
+			array('project_title', 'safe'),
+
+            array("project_title", "required"),
+            array("project_status_id", "required"),
+            // array("project_type_id", "required"),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, project_title, project_cost, project_start, project_finish, project_status_id, project_type_id, project_size_id', 'safe', 'on'=>'search'),
+			array('id, project_title, project_status_id, project_type_id, project_size_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,6 +51,7 @@ class Project extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            "status" => array(self::BELONGS_TO, "TaxonomyTerm", "project_status_id")
 		);
 	}
 
@@ -58,12 +62,9 @@ class Project extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'project_title' => 'Project Title',
-			'project_cost' => 'Project Cost',
-			'project_start' => 'Project Start',
-			'project_finish' => 'Project Finish',
-			'project_status_id' => 'Project Status',
-			'project_type_id' => 'Project Type',
+			'project_title' => 'Наименование проекта',
+			'project_status_id' => 'Статус проекта',
+			'project_type_id' => 'Вид проекта',
 			'project_size_id' => 'Project Size',
 		);
 	}
@@ -85,15 +86,15 @@ class Project extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+        /*
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('project_title',$this->project_title,true);
-		$criteria->compare('project_cost',$this->project_cost,true);
 		$criteria->compare('project_start',$this->project_start,true);
 		$criteria->compare('project_finish',$this->project_finish,true);
 		$criteria->compare('project_status_id',$this->project_status_id);
 		$criteria->compare('project_type_id',$this->project_type_id);
 		$criteria->compare('project_size_id',$this->project_size_id);
+        */
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

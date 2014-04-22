@@ -56,9 +56,9 @@ class TaxonomyTerm extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'taxonomy_id' => 'Taxonomy',
-			'term_name' => 'Term Name',
-			'term_alias' => 'Term Alias',
+			'taxonomy_id' => 'Родительская таксономия',
+			'term_name' => 'Термин',
+			'term_alias' => 'Псевдоним термина',
 		);
 	}
 
