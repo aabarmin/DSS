@@ -15,7 +15,11 @@ $this->menu=array(
 	'dataProvider'=>$model->search(),
 	'columns'=>array(
 		'id',
-		'project_title',
+		array(
+            'name' => 'project_title',
+            'value' => 'CHtml::link($data->project_title, Yii::app()->createUrl("project/view", array("id" => $data->id)))',
+            'type' => 'raw'
+        ),
 		array(
             'name' => 'project_status_id',
             'value' => '$data->status->term_name'

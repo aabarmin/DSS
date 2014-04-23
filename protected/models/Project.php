@@ -35,6 +35,7 @@ class Project extends CActiveRecord
 
             array("project_title", "required"),
             array("project_status_id", "required"),
+            array("project_stakeholder_id", "required"),
             // array("project_type_id", "required"),
 
 			// The following rule is used by search().
@@ -42,6 +43,12 @@ class Project extends CActiveRecord
 			array('id, project_title, project_status_id, project_type_id, project_size_id', 'safe', 'on'=>'search'),
 		);
 	}
+
+    public function behaviors() {
+        return array('CAdvancedArBehavior' => array(
+            'class' => 'application.extensions.CAdvancedArBehavior')
+        );
+    }
 
 	/**
 	 * @return array relational rules.
@@ -51,7 +58,13 @@ class Project extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-            "status" => array(self::BELONGS_TO, "TaxonomyTerm", "project_status_id")
+            "status" => array(self::BELONGS_TO, "TaxonomyTerm", "project_status_id"),
+            'type' => array(self::BELONGS_TO, 'TaxonomyTerm', 'project_type_id'),
+            'size' => array(self::BELONGS_TO, 'TaxonomyTerm', 'project_size_id'),
+            'cost' => array(self::BELONGS_TO, 'TaxonomyTerm', 'project_cost_id'),
+            "team" => array(self::MANY_MANY, "Staff", "data_project_team(project_id, staff_id)"),
+            'attachments' => array(self::HAS_MANY, 'ProjectAttachment', 'project_id'),
+            'problems' => array(self::HAS_MANY, 'ProjectProblem', 'project_id')
 		);
 	}
 
@@ -65,7 +78,13 @@ class Project extends CActiveRecord
 			'project_title' => 'Наименование проекта',
 			'project_status_id' => 'Статус проекта',
 			'project_type_id' => 'Вид проекта',
-			'project_size_id' => 'Project Size',
+			'project_size_id' => 'Размер проекта',
+            'project_length_id' => 'Длительность проекта',
+            'project_cost_id' => 'Стоимость проекта',
+            'project_stakeholder_id' => 'Заказчик',
+            'project_manager_id' => 'Руководитель проекта',
+            'project_foreign_manager_id' => 'Руководитель проекта от заказчика',
+            'team' => 'Команда проекта',
 		);
 	}
 

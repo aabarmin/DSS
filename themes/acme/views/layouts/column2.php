@@ -32,6 +32,11 @@
 	                        	'icon'=>'fa-icon-tasks', 
 	                        	'url'=>array('/taxonomy/taxonomy/admin')
 							),
+                            array(
+                                'label'=>'Сотрудники',
+                                'icon'=>'fa-icon-tasks',
+                                'url'=>array('/staff/admin')
+                            ),
 	                    ),
 	            )); ?>				
 			</div>

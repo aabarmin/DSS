@@ -20,7 +20,8 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-        'application.modules.taxonomy.models.*'
+        'application.modules.taxonomy.models.*',
+        'application.extensions.CAdvancedArBehavior'
 	),
 
 	'modules'=>array(

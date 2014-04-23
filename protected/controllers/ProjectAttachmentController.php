@@ -1,6 +1,6 @@
 <?php
 
-class ProjectController extends Controller
+class ProjectAttachmentController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -61,17 +61,20 @@ class ProjectController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Project;
+		$model=new ProjectAttachment;
+        $model->project_id = $_GET['id'];
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Project']))
+		if(isset($_POST['ProjectAttachment']))
 		{
-			$model->attributes=$_POST['Project'];
-            $model->team = $_POST['Project']['team'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->attributes=$_POST['ProjectAttachment'];
+            $model->attach_file = CUploadedFile::getInstance($model, 'attach_file');
+			if($model->save()) {
+                $model->attach_file->saveAs(Yii::getPathOfAlias('application.data.uploads').'/'.$model->attach_file);
+                $this->redirect(array('/project/view','id'=>$model->project_id));
+            }
 		}
 
 		$this->render('create',array(
@@ -91,13 +94,14 @@ class ProjectController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Project']))
+		if(isset($_POST['ProjectAttachment']))
 		{
-			$model->attributes=$_POST['Project'];
-            $model->team = $_POST['Project']['team'];
-            $model->save();
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->attributes=$_POST['ProjectAttachment'];
+            $model->attach_file = CUploadedFile::getInstance($model, 'attach_file');
+            if($model->save()) {
+                $model->attach_file->saveAs(Yii::getPathOfAlias('application.data.uploads').'/'.$model->attach_file);
+                $this->redirect(array('/project/view','id'=>$model->project_id));
+            }
 		}
 
 		$this->render('update',array(
@@ -130,7 +134,7 @@ class ProjectController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Project');
+		$dataProvider=new CActiveDataProvider('ProjectAttachment');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -141,10 +145,10 @@ class ProjectController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Project('search');
+		$model=new ProjectAttachment('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Project']))
-			$model->attributes=$_GET['Project'];
+		if(isset($_GET['ProjectAttachment']))
+			$model->attributes=$_GET['ProjectAttachment'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -158,7 +162,7 @@ class ProjectController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Project::model()->findByPk($id);
+		$model=ProjectAttachment::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -170,7 +174,7 @@ class ProjectController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='project-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='project-attachment-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

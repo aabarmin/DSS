@@ -22,6 +22,19 @@
     ?>
 
     <?php
+        echo $form->label($model, "team");
+        echo $form->listBox($model, "team",
+            CHtml::listData(Staff::model()->findAllByAttributes(array(
+                'staff_is_external' => '0'
+            )), "id", "fullname"),
+            array(
+                "multiple" => "multiple"
+            )
+        );
+        echo $form->error($model, "team");
+    ?>
+
+    <?php
         $tax = Taxonomy::model()->findByAttributes(array(
             "alias" => "project_type"
         ));
@@ -51,9 +64,24 @@
         ));
     ?>
 
-	<?php echo $form->textFieldRow($model,'project_type_id',array('class'=>'span5')); ?>
+    <?php echo $form->dropDownListRow($model, 'project_stakeholder_id',
+        CHtml::listData(Staff::model()->findAllByAttributes(array(
+            'staff_is_external' => '1'
+        )), "id", 'fullname'),
+        array('prompt' => 'Выберите из списка...')
+    ); ?>
 
-	<?php echo $form->textFieldRow($model,'project_size_id',array('class'=>'span5')); ?>
+    <?php echo $form->dropDownListRow($model, 'project_manager_id',
+        CHtml::listData(Staff::model()->findAll(), "id", 'fullname'),
+        array('prompt' => 'Выберите из списка...')
+    ); ?>
+
+    <?php echo $form->dropDownListRow($model, 'project_foreign_manager_id',
+        CHtml::listData(Staff::model()->findAllByAttributes(array(
+            'staff_is_external' => '1'
+        )), "id", 'fullname'),
+        array('prompt' => 'Выберите из списка...')
+    ); ?>
 
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(

@@ -14,11 +14,10 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(
-	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index')),
-	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin')),
+	array('label'=>'Управление <?php echo $this->modelClass; ?>','url'=>array('admin')),
 );
 ?>
 
-<h1>Create <?php echo $this->modelClass; ?></h1>
+<h1>Добавление <?php echo $this->modelClass; ?></h1>
 
 <?php echo "<?php echo \$this->renderPartial('_form', array('model'=>\$model)); ?>"; ?>

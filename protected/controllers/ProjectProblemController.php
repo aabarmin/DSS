@@ -1,6 +1,6 @@
 <?php
 
-class ProjectController extends Controller
+class ProjectProblemController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -61,17 +61,17 @@ class ProjectController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Project;
+		$model=new ProjectProblem;
+        $model->project_id = $_GET["id"];
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Project']))
+		if(isset($_POST['ProjectProblem']))
 		{
-			$model->attributes=$_POST['Project'];
-            $model->team = $_POST['Project']['team'];
+			$model->attributes=$_POST['ProjectProblem'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                $this->redirect(array('/project/view','id'=>$model->project_id));
 		}
 
 		$this->render('create',array(
@@ -91,13 +91,11 @@ class ProjectController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Project']))
+		if(isset($_POST['ProjectProblem']))
 		{
-			$model->attributes=$_POST['Project'];
-            $model->team = $_POST['Project']['team'];
-            $model->save();
+			$model->attributes=$_POST['ProjectProblem'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                $this->redirect(array('/project/view','id'=>$model->project_id));
 		}
 
 		$this->render('update',array(
@@ -130,7 +128,7 @@ class ProjectController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Project');
+		$dataProvider=new CActiveDataProvider('ProjectProblem');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -141,10 +139,10 @@ class ProjectController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Project('search');
+		$model=new ProjectProblem('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Project']))
-			$model->attributes=$_GET['Project'];
+		if(isset($_GET['ProjectProblem']))
+			$model->attributes=$_GET['ProjectProblem'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -158,7 +156,7 @@ class ProjectController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Project::model()->findByPk($id);
+		$model=ProjectProblem::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -170,7 +168,7 @@ class ProjectController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='project-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='project-problem-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
