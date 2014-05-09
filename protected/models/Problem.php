@@ -103,4 +103,130 @@ class Problem extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function statisticSolutions()
+    {
+        $withSolution = 0;
+        $withoutSolution = 0;
+
+        foreach ($this->findAll() as $problem) {
+            if (count($problem->solutions) == 0) {
+                $withoutSolution++;
+            } else {
+                $withSolution++;
+            }
+        }
+        return array(
+            array(
+                'label' => 'Без решения',
+                'data' => $withoutSolution
+            ),
+            array(
+                'label' => 'С решением',
+                'data' => $withSolution
+            )
+        );
+    }
+
+    public function statisticProblemsLast()
+    {
+        $today = new DateTime();
+
+        $objects = Yii::app()->db->createCommand()
+            ->select("
+                count(id) as cnt,
+	            month(created) as date_m,
+	            day(created) as date_d,
+	            concat(day(created), '.', month(created)) as date_full")
+            ->from('data_problem')
+            ->group('date_full')
+            ->where('created IS NOT NULL AND created > DATE_SUB(curdate(), INTERVAL 2 WEEK)')
+            ->queryAll();
+
+        // исходно размечаем массив
+        $data = array();
+        for ($i = 0; $i < 14; $i++) {
+            $date = $today->modify('-'.$i.' day');
+            $data[$date->format("j.n")] = 0;
+        }
+        // добавляем полученные данные
+        foreach ($objects as $object) {
+            $date = $object['date_full'];
+            if (array_key_exists($date, $data)) {
+                $data[$date]++;
+            }
+        }
+        // результирующий массив
+        $result = array();
+        foreach ($data as $key=>$value) {
+            $result[] = array(
+                $key,
+                $value
+            );
+        }
+
+        return $result;
+    }
+    public function statisticRecommendationsSolutionsLast()
+    {
+        $today = new DateTime();
+
+        // исходно размечаем массив
+        $data = array();
+        for ($i = 0; $i < 14; $i++) {
+            $date = $today->modify('-'.$i.' day');
+            $data[$date->format("j.n")] = 0;
+        }
+        // решения
+        $objects = Yii::app()->db->createCommand()
+            ->select("
+                count(id) as cnt,
+	            month(created) as date_m,
+	            day(created) as date_d,
+	            concat(day(created), '.', month(created)) as date_full")
+            ->from('data_problem_solution')
+            ->group('date_full')
+            ->where('created IS NOT NULL AND created > DATE_SUB(curdate(), INTERVAL 2 WEEK)')
+            ->queryAll();
+
+        // добавляем полученные данные
+        foreach ($objects as $object) {
+            $date = $object['date_full'];
+            if (array_key_exists($date, $data)) {
+                $data[$date]++;
+            }
+        }
+
+        // рекомендации
+        // решения
+        $objects = Yii::app()->db->createCommand()
+            ->select("
+                count(id) as cnt,
+	            month(created) as date_m,
+	            day(created) as date_d,
+	            concat(day(created), '.', month(created)) as date_full")
+            ->from('data_problem_recommendation')
+            ->group('date_full')
+            ->where('created IS NOT NULL AND created > DATE_SUB(curdate(), INTERVAL 2 WEEK)')
+            ->queryAll();
+
+        // добавляем полученные данные
+        foreach ($objects as $object) {
+            $date = $object['date_full'];
+            if (array_key_exists($date, $data)) {
+                $data[$date]++;
+            }
+        }
+
+        // результирующий массив
+        $result = array();
+        foreach ($data as $key=>$value) {
+            $result[] = array(
+                $key,
+                $value
+            );
+        }
+
+        return $result;
+    }
 }

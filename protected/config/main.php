@@ -95,6 +95,19 @@ return array(
         // мои расширения
         'BSiteFunctions' => array(
             'class' => 'application.components.BSiteFunctions'
+        ),
+
+        // js на все приложение
+        'clientScript' => array(
+            'packages' => array(
+                'jquery' => array(
+                    'baseUrl'=>'//code.jquery.com/',
+                    'js'=>array(
+                        'jquery-1.9.1.min.js',
+                        'jquery-migrate-1.0.0.min.js'
+                    ),
+                ),
+            )
         )
 	),
 

@@ -88,20 +88,12 @@
   
   
   <!-- start: JavaScript-->
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.9.1.min.js"></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-migrate-1.0.0.min.js"></script> 
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.10.0.custom.min.js"></script> 
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.ui.touch-punch.js"></script> 
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/modernizr.js"></script> 
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.cookie.js"></script> 
-  <script src='<?php echo Yii::app()->theme->baseUrl; ?>/js/fullcalendar.min.js'></script> 
-  <script src='<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.dataTables.min.js'></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/excanvas.js"></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.flot.js"></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.flot.pie.js"></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.flot.stack.js"></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.flot.resize.min.js"></script> 
+  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.cookie.js"></script>
+  <script src='<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.dataTables.min.js'></script>
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/gauge.min.js"></script> 
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.chosen.min.js"></script> 
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.uniform.min.js"></script> 
@@ -120,9 +112,7 @@
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/raphael.2.1.0.min.js"></script> 
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/justgage.1.0.1.min.js"></script> 
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/retina.js"></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/core.min.js"></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/charts.js"></script> 
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/custom.js"></script> 
+  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/core.min.js"></script>
   <!-- end: JavaScript-->  
 
 <?php $this->endContent(); ?>

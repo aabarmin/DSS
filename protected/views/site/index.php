@@ -1,20 +1,179 @@
-<?php
-/* @var $this SiteController */
+<div class="container-fluid">
+    <div class="row">
+        <div class="span6">
+            <?php $this->beginWidget('dss.widgets.BoxWidget', array(
+                'title' => 'Проблемы за 14 дней'
+            )); ?>
 
-$this->pageTitle=Yii::app()->name;
-?>
+                <?php
+                    $this->widget('application.extensions.EFlot.EFlotGraphWidget',
+                        array(
+                            'data'=>array(
+                                array(
+                                    'label'=> 'Проблем',
+                                    'data'=> Problem::model()->statisticProblemsLast(),
+                                    'bars'=>array('show'=>true),
+                                ),
+                            ),
+                            'options'=>array(
+                                'legend'=>array(
+                                    'position'=>'nw',
+                                    'show'=>true,
+                                    'margin'=>10,
+                                    'backgroundOpacity'=> 0.5
+                                ),
+                                'xaxis' => array(
+                                    'mode' => 'categories',
+                                    'tickLength' => 0
+                                ),
+                                'series' => array(
+                                    'bars' => array(
+                                        'show' => true,
+                                        'barWidth' => 0.6,
+                                        'align' => 'center'
+                                    )
+                                )
+                            ),
+                            'htmlOptions'=>array(
+                                'style'=>'width:100%;height:400px;'
+                            )
+                        )
+                    );
+                ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+            <?php $this->endWidget(); ?>
+        </div>
+        <div class="span6">
+            <?php $this->beginWidget('dss.widgets.BoxWidget', array(
+                'title' => 'Рекомендации и решения за 14 дней'
+            )); ?>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+                <?php
+                $this->widget('application.extensions.EFlot.EFlotGraphWidget',
+                    array(
+                        'data'=>array(
+                            array(
+                                'label'=> 'Решений и рекомендаций',
+                                'data'=> Problem::model()->statisticRecommendationsSolutionsLast(),
+                                'bars'=>array('show'=>true),
+                            ),
+                        ),
+                        'options'=>array(
+                            'legend'=>array(
+                                'position'=>'nw',
+                                'show'=>true,
+                                'margin'=>10,
+                                'backgroundOpacity'=> 0.5
+                            ),
+                            'xaxis' => array(
+                                'mode' => 'categories',
+                                'tickLength' => 0
+                            ),
+                            'series' => array(
+                                'bars' => array(
+                                    'show' => true,
+                                    'barWidth' => 0.6,
+                                    'align' => 'center'
+                                )
+                            )
+                        ),
+                        'htmlOptions'=>array(
+                            'style'=>'width:100%;height:400px;'
+                        )
+                    )
+                );
+                ?>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
+            <?php $this->endWidget(); ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span4">
+            <?php $this->beginWidget('dss.widgets.BoxWidget', array(
+                'title' => 'Проекты по статусам'
+            )); ?>
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+                <?php
+                $format_func = <<<EOD
+                    js:function(label, series){
+                        return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">'+label+'<br/>'+Math.round(series.percent)+'%</div>';}
+EOD;
+                $this->widget('application.extensions.EFlot.EFlotGraphWidget',
+                    array(
+                        'data'=> Project::model()->statisticByStatus(),
+                        'options'=>array(
+                            'series'=> array('pie'=>array(
+                                'show'=>true,
+                                'radius'=> 3/4,
+                                'formatter'=> $format_func,
+                            ),
+                            ),
+                            'legend'=> array('show'=>false),
+                        ),
+                        'htmlOptions'=>array('style'=>'width:100%;height:400px;')
+                    )
+                );
+                ?>
+
+            <?php $this->endWidget(); ?>
+        </div>
+        <div class="span4">
+            <?php $this->beginWidget('dss.widgets.BoxWidget', array(
+                'title' => 'Проблемы по проектам'
+            )); ?>
+
+                <?php
+                $format_func = <<<EOD
+                    js:function(label, series){
+                        return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">'+label+'<br/>'+Math.round(series.percent)+'%</div>';}
+EOD;
+                $this->widget('application.extensions.EFlot.EFlotGraphWidget',
+                    array(
+                        'data'=> Project::model()->statisticWithoutProblems(),
+                        'options'=>array(
+                            'series'=> array('pie'=>array(
+                                'show'=>true,
+                                'radius'=> 3/4,
+                                'formatter'=> $format_func,
+                            ),
+                            ),
+                            'legend'=> array('show'=>false),
+                        ),
+                        'htmlOptions'=>array('style'=>'width:100%;height:400px;')
+                    )
+                );
+                ?>
+
+            <?php $this->endWidget(); ?>
+        </div>
+        <div class="span4">
+            <?php $this->beginWidget('dss.widgets.BoxWidget', array(
+                'title' => 'Классификация проектов по видам'
+            )); ?>
+
+                <?php
+                $format_func = <<<EOD
+                    js:function(label, series){
+                        return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">'+label+'<br/>'+Math.round(series.percent)+'%</div>';}
+EOD;
+                $this->widget('application.extensions.EFlot.EFlotGraphWidget',
+                    array(
+                        'data'=> Project::model()->statisticByType(),
+                        'options'=>array(
+                            'series'=> array('pie'=>array(
+                                'show'=>true,
+                                'radius'=> 3/4,
+                                'formatter'=> $format_func,
+                            ),
+                            ),
+                            'legend'=> array('show'=>false),
+                        ),
+                        'htmlOptions'=>array('style'=>'width:100%;height:400px;')
+                    )
+                );
+                ?>
+
+            <?php $this->endWidget(); ?>
+        </div>
+    </div>
+</div>

@@ -95,7 +95,6 @@ class ProjectController extends Controller
 		{
 			$model->attributes=$_POST['Project'];
             $model->team = $_POST['Project']['team'];
-            $model->save();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

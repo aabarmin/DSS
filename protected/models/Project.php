@@ -130,4 +130,77 @@ class Project extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function statisticByType() {
+        $data = array();
+        $result = array();
+
+        foreach ($this->findAll() as $project) {
+            if (!is_null($project->type)) {
+                if (!array_key_exists($project->project_type_id, $data)) {
+                    $data[$project->project_type_id] = 0;
+                }
+                $data[$project->project_type_id]++;
+            }
+        }
+        foreach ($data as $key=>$value) {
+            $m = array(
+                'label' => TaxonomyTerm::model()->findByPk($key)->term_name,
+                'data' => $value
+            );
+            $result[] = $m;
+        }
+
+        return $result;
+    }
+
+    public function statisticWithoutProblems() {
+        $withProblems = 0;
+        $withoutProblems = 0;
+
+        foreach ($this->findAll() as $project) {
+            if (count($project->problems) == 0) {
+                // это проект без проблем
+                $withoutProblems++;
+            } else {
+                // это с проблемами
+                $withProblems++;
+            }
+        }
+        $result = array(
+            array(
+                'label' => 'Без проблем',
+                'data' => $withoutProblems
+            ),
+            array(
+                'label' => 'Есть проблемы',
+                'data' => $withProblems
+            )
+        );
+
+        return $result;
+    }
+
+    public function statisticByStatus()
+    {
+        $result = array();
+
+        $objects = Yii::app()->db->createCommand()
+            ->select("
+                count(project.id) as cnt,
+	            term.term_name")
+            ->from('data_project as project')
+            ->join('data_taxonomy_term as term', 'project.project_status_id = term.id')
+            ->group('term.id')
+            ->queryAll();
+
+        foreach ($objects as $o) {
+            $result[] = array(
+                'label' => $o['term_name'],
+                'data' => (int) $o['cnt']
+            );
+        }
+
+        return $result;
+    }
 }
