@@ -1,21 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "{{project_problem_solution}}".
+ * This is the model class for table "{{problem}}".
  *
- * The followings are the available columns in table '{{project_problem_solution}}':
+ * The followings are the available columns in table '{{problem}}':
  * @property string $id
- * @property integer $problem_id
- * @property string $solution_comment
+ * @property integer $problem_type_id
+ * @property integer $problem_priority_id
+ * @property string $problem_comment
  */
-class ProjectProblemSolution extends CActiveRecord
+class Problem extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{project_problem_solution}}';
+		return '{{problem}}';
 	}
 
 	/**
@@ -26,11 +27,13 @@ class ProjectProblemSolution extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('problem_id', 'numerical', 'integerOnly'=>true),
-			array('solution_comment', 'safe'),
+			array('problem_type_id, problem_priority_id', 'numerical', 'integerOnly'=>true),
+			array('problem_comment', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, problem_id, solution_comment', 'safe', 'on'=>'search'),
+			array('id, problem_type_id, problem_priority_id, problem_comment', 'safe', 'on'=>'search'),
+
+            array('problem_type_id, problem_priority_id, problem_comment', 'required')
 		);
 	}
 
@@ -41,8 +44,12 @@ class ProjectProblemSolution extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+        return array(
+            'type' => array(self::BELONGS_TO, 'TaxonomyTerm', 'problem_type_id'),
+            'priority' => array(self::BELONGS_TO, 'TaxonomyTerm', 'problem_priority_id'),
+            'recommendations' => array(self::HAS_MANY, 'ProblemRecommendation', 'problem_id'),
+            'solutions' => array(self::HAS_MANY, 'ProblemSolution', 'problem_id'),
+        );
 	}
 
 	/**
@@ -52,8 +59,9 @@ class ProjectProblemSolution extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'problem_id' => 'Проблема',
-			'solution_comment' => 'Комментарий',
+			'problem_type_id' => 'Тип проблемы',
+			'problem_priority_id' => 'Приоритет',
+			'problem_comment' => 'Комментарий',
 		);
 	}
 
@@ -76,8 +84,9 @@ class ProjectProblemSolution extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('problem_id',$this->problem_id);
-		$criteria->compare('solution_comment',$this->solution_comment,true);
+		$criteria->compare('problem_type_id',$this->problem_type_id);
+		$criteria->compare('problem_priority_id',$this->problem_priority_id);
+		$criteria->compare('problem_comment',$this->problem_comment,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -88,7 +97,7 @@ class ProjectProblemSolution extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ProjectProblemSolution the static model class
+	 * @return Problem the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -1,21 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "{{project_problem}}".
+ * This is the model class for table "{{problem_solution}}".
  *
- * The followings are the available columns in table '{{project_problem}}':
+ * The followings are the available columns in table '{{problem_solution}}':
  * @property string $id
- * @property integer $project_id
  * @property integer $problem_id
+ * @property string $solution_comment
  */
-class ProjectProblem extends CActiveRecord
+class ProblemSolution extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{project_problem}}';
+		return '{{problem_solution}}';
 	}
 
 	/**
@@ -26,10 +26,11 @@ class ProjectProblem extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('project_id, problem_id', 'numerical', 'integerOnly'=>true),
+			array('problem_id', 'numerical', 'integerOnly'=>true),
+			array('solution_comment', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, project_id, problem_id', 'safe', 'on'=>'search'),
+			array('id, problem_id, solution_comment', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,8 +52,8 @@ class ProjectProblem extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'project_id' => 'Project',
-			'problem_id' => 'Problem',
+			'problem_id' => 'Проблема',
+			'solution_comment' => 'Комментарий',
 		);
 	}
 
@@ -75,8 +76,8 @@ class ProjectProblem extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('project_id',$this->project_id);
 		$criteria->compare('problem_id',$this->problem_id);
+		$criteria->compare('solution_comment',$this->solution_comment,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -87,7 +88,7 @@ class ProjectProblem extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ProjectProblem the static model class
+	 * @return ProblemSolution the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

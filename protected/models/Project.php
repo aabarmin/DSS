@@ -64,7 +64,7 @@ class Project extends CActiveRecord
             'cost' => array(self::BELONGS_TO, 'TaxonomyTerm', 'project_cost_id'),
             "team" => array(self::MANY_MANY, "Staff", "data_project_team(project_id, staff_id)"),
             'attachments' => array(self::HAS_MANY, 'ProjectAttachment', 'project_id'),
-            'problems' => array(self::HAS_MANY, 'ProjectProblem', 'project_id')
+            'problems' => array(self::MANY_MANY, "Problem", "data_project_problem(project_id, problem_id)")
 		);
 	}
 

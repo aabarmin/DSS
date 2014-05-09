@@ -5077,3 +5077,367 @@ Stack trace:
 REQUEST_URI=/apps/dss/index.php?r=projectProblemRecommendation&id=1
 HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=projectProblem/view&id=1
 ---
+2014/04/27 16:52:59 [warning] [application] Failed to set unsafe attribute "team" of "Project".
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php (96)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php (13)
+2014/04/27 16:52:59 [warning] [application] Failed to set unsafe attribute "project_cost_id" of "Project".
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php (96)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php (13)
+2014/04/27 16:52:59 [warning] [application] Failed to set unsafe attribute "project_length_id" of "Project".
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php (96)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php (13)
+2014/04/27 16:52:59 [warning] [application] Failed to set unsafe attribute "project_manager_id" of "Project".
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php (96)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php (13)
+2014/04/27 16:52:59 [warning] [application] Failed to set unsafe attribute "project_foreign_manager_id" of "Project".
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php (96)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php (13)
+2014/05/09 16:43:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'problems.project_id' in 'where clause'. The SQL statement executed was: SELECT `problems`.`id` AS `t1_c0`, `problems`.`problem_type_id` AS `t1_c1`, `problems`.`problem_priority_id` AS `t1_c2`, `problems`.`problem_comment` AS `t1_c3` FROM `data_project_problem` `problems`  WHERE (`problems`.`project_id`=:ypl0).
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/project/view.php (98)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php (55)
+in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php (13)
+2014/05/09 16:43:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'problems.project_id' in 'where clause'. The SQL statement executed was: SELECT `problems`.`id` AS `t1_c0`, `problems`.`problem_type_id` AS `t1_c1`, `problems`.`problem_priority_id` AS `t1_c2`, `problems`.`problem_comment` AS `t1_c3` FROM `data_project_problem` `problems`  WHERE (`problems`.`project_id`=:ypl0)' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveFinder.php(803): CDbCommand->queryAll()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveFinder.php(507): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(Project))
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Project))
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('problems')
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/project/view.php(98): CActiveRecord->__get('problems')
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(869): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php(55): CController->render('view', Array)
+#12 [internal function]: ProjectController->actionView('1')
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectController), Array)
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectController), Object(ReflectionMethod), Array)
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('project/view')
+#25 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#26 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/apps/dss/index.php?r=project/view&id=1
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=project/admin
+---
+2014/05/09 16:49:53 [error] [exception.CException] exception 'CException' with message 'Property "Problem.problemm_comment" is not defined.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveRecord.php(145): CComponent->__get('problemm_commen...')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/validators/CRequiredValidator.php(58): CActiveRecord->__get('problemm_commen...')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/validators/CValidator.php(213): CRequiredValidator->validateAttribute(Object(Problem), 'problemm_commen...')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CModel.php(159): CValidator->validate(Object(Problem), NULL)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProblemController.php(72): CActiveRecord->save()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): ProblemController->actionCreate()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('problem/create')
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/apps/dss/index.php?r=problem/create
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=problem/create
+---
+2014/05/09 16:52:42 [error] [exception.CException] exception 'CException' with message 'Property "Problem.project_type_id" is not defined.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveRecord.php(145): CComponent->__get('project_type_id')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('project_type_id')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Problem), 'project_type_id')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Problem), 'project_type_id', Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CDataColumn.php(103): CHtml::activeTextField(Object(Problem), 'project_type_id', Array)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/extensions/bootstrap/widgets/TbDataColumn.php(53): CDataColumn->renderFilterCellContent()
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridView.php(532): TbDataColumn->renderFilterCell()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridView.php(510): CGridView->renderFilter()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridView.php(480): CGridView->renderTableHeader()
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(173): CBaseListView->run()
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/problem/admin.php(61): CBaseController->widget('bootstrap.widge...', Array)
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(869): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProblemController.php(148): CController->render('admin', Array)
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(49): ProblemController->actionAdmin()
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#25 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#26 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#27 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#28 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('admin')
+#30 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('problem/admin')
+#31 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#32 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#33 {main}
+REQUEST_URI=/apps/dss/index.php?r=problem/admin
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=problem/view&id=2
+---
+2014/05/09 17:00:10 [error] [exception.CException] exception 'CException' with message 'ProjectProblemController cannot find the requested view "view".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:878
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectProblemController.php(55): CController->render('view', Array)
+#2 [internal function]: ProjectProblemController->actionView('2')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectProblemController), Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectProblemController), Object(ReflectionMethod), Array)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('projectProblem/...')
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/apps/dss/index.php?r=projectProblem/view&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=projectProblem/create&id=1
+---
+2014/05/09 17:00:58 [error] [exception.CException] exception 'CException' with message 'ProjectProblemController cannot find the requested view "view".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:878
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectProblemController.php(55): CController->render('view', Array)
+#2 [internal function]: ProjectProblemController->actionView('2')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectProblemController), Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectProblemController), Object(ReflectionMethod), Array)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('projectProblem/...')
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/apps/dss/index.php?r=projectProblem/view&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=projectProblem/create&id=1
+---
+2014/05/09 17:01:54 [error] [exception.CException] exception 'CException' with message 'Property "ProjectProblem.problem_comment" is not defined.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveRecord.php(145): CComponent->__get('problem_comment')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('problem_comment')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php(612): eval()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CDataColumn.php(137): CComponent->evaluateExpression('CHtml::link(sub...', Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridColumn.php(151): CDataColumn->renderDataCellContent(0, Object(ProjectProblem))
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridView.php(616): CGridColumn->renderDataCell(0)
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridView.php(572): CGridView->renderTableRow(0)
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridView.php(482): CGridView->renderTableBody()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(173): CBaseListView->run()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/project/view.php(114): CBaseController->widget('bootstrap.widge...', Array)
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(869): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php(55): CController->render('view', Array)
+#19 [internal function]: ProjectController->actionView('1')
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectController), Array)
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectController), Object(ReflectionMethod), Array)
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#29 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#31 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('project/view')
+#32 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#33 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#34 {main}
+REQUEST_URI=/apps/dss/index.php?r=project/view&id=1
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=projectProblem/create&id=1
+---
+2014/05/09 17:02:40 [error] [exception.CException] exception 'CException' with message 'ProjectProblemController cannot find the requested view "view".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:878
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectProblemController.php(55): CController->render('view', Array)
+#2 [internal function]: ProjectProblemController->actionView('2')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectProblemController), Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectProblemController), Object(ReflectionMethod), Array)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('projectProblem/...')
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/apps/dss/index.php?r=projectProblem/view&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=project/view&id=1
+---
+2014/05/09 17:02:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php:163
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProjectController.php(54): ProjectController->loadModel('2')
+#1 [internal function]: ProjectController->actionView('2')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectController), Array)
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectController), Object(ReflectionMethod), Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('project/view')
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/apps/dss/index.php?r=project/view&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=project/view&id=1
+---
+2014/05/09 17:15:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php:336
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('problem/view')
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/apps/dss/index.php?r=problem/view&0%5Bid%5D=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=problemRecommendation/create&id=2
+---
+2014/05/09 17:18:45 [error] [exception.CException] exception 'CException' with message 'Property "Problem.team" is not defined.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveRecord.php(145): CComponent->__get('team')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/problem/view.php(55): CActiveRecord->__get('team')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(869): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProblemController.php(55): CController->render('view', Array)
+#7 [internal function]: ProblemController->actionView('2')
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProblemController), Array)
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProblemController), Object(ReflectionMethod), Array)
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#19 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('problem/view')
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/apps/dss/index.php?r=problem/view&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=problemRecommendation/create&id=2
+---
+2014/05/09 17:20:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProblemController.php:160
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProblemController.php(54): ProblemController->loadModel('3')
+#1 [internal function]: ProblemController->actionView('3')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProblemController), Array)
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProblemController), Object(ReflectionMethod), Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('problem/view')
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/apps/dss/index.php?r=problem/view&id=3
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=problem/view&id=2
+---
+2014/05/09 17:21:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "problemSolution/create".' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('problemSolution...')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/apps/dss/index.php?r=problemSolution/create&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=problem/view&id=2
+---
+2014/05/09 17:27:03 [error] [exception.CException] exception 'CException' with message 'Property "ProblemRecommendation.recommendation_comment" is not defined.' in /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/db/ar/CActiveRecord.php(145): CComponent->__get('recommendation_...')
+#1 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('recommendation_...')
+#2 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CComponent.php(612): eval()
+#3 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CDataColumn.php(137): CComponent->evaluateExpression('$data->recommen...', Array)
+#4 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridColumn.php(151): CDataColumn->renderDataCellContent(0, Object(ProblemRecommendation))
+#5 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridView.php(616): CGridColumn->renderDataCell(0)
+#6 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridView.php(572): CGridView->renderTableRow(0)
+#7 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/grid/CGridView.php(482): CGridView->renderTableBody()
+#8 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#11 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#12 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(173): CBaseListView->run()
+#13 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/views/problem/view.php(63): CBaseController->widget('bootstrap.widge...', Array)
+#14 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(126): require('/Users/aleksand...')
+#15 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/aleksand...', Array, true)
+#16 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(869): CBaseController->renderFile('/Users/aleksand...', Array, true)
+#17 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#18 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/protected/controllers/ProblemController.php(55): CController->render('view', Array)
+#19 [internal function]: ProblemController->actionView('2')
+#20 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProblemController), Array)
+#21 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProblemController), Object(ReflectionMethod), Array)
+#22 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(291): CFilterChain->run()
+#29 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(282): CController->run('view')
+#31 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/web/CWebApplication.php(141): CWebApplication->runController('problem/view')
+#32 /Users/aleksandr/Documents/web_projetcs/lesenok.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#33 /Users/aleksandr/Documents/web_projetcs/lesenok.local/apps/dss/index.php(13): CApplication->run()
+#34 {main}
+REQUEST_URI=/apps/dss/index.php?r=problem/view&id=2
+HTTP_REFERER=http://lesenok.local/apps/dss/index.php?r=project/view&id=1
+---

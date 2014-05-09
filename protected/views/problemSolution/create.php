@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Project Problem Solutions'=>array('index'),
+	'Problem Solutions'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-    array('label'=>'К проблеме','url'=>array('projectProblem/view', 'id' => $model->problem_id)),
+    array('label'=>'Назад','url'=>array('/problem/view/', 'id' => $model->problem_id)),
 );
 ?>
 

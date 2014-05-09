@@ -1,21 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "{{project_problem_recommendation}}".
+ * This is the model class for table "{{problem_recommendation}}".
  *
- * The followings are the available columns in table '{{project_problem_recommendation}}':
+ * The followings are the available columns in table '{{problem_recommendation}}':
  * @property string $id
  * @property integer $problem_id
  * @property string $recomendation_comment
  */
-class ProjectProblemRecommendation extends CActiveRecord
+class ProblemRecommendation extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{project_problem_recommendation}}';
+		return '{{problem_recommendation}}';
 	}
 
 	/**
@@ -42,7 +42,6 @@ class ProjectProblemRecommendation extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-            'problem' => array(self::BELONGS_TO, 'ProjectProblem', 'problem_id')
 		);
 	}
 
@@ -54,7 +53,7 @@ class ProjectProblemRecommendation extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'problem_id' => 'Проблема',
-			'recomendation_comment' => 'Комментарий',
+			'recommendation_comment' => 'Комментарий',
 		);
 	}
 
@@ -89,7 +88,7 @@ class ProjectProblemRecommendation extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ProjectProblemRecommendation the static model class
+	 * @return ProblemRecommendation the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

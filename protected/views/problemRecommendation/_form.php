@@ -1,5 +1,5 @@
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
-	'id'=>'project-problem-solution-form',
+	'id'=>'problem-recommendation-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -9,7 +9,7 @@
 
 	<?php echo $form->hiddenField($model,'problem_id',array('class'=>'span5')); ?>
 
-	<?php echo $form->textAreaRow($model,'solution_comment',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<?php echo $form->textAreaRow($model,'recomendation_comment',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
 
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(

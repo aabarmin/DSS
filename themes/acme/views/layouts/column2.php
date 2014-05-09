@@ -37,6 +37,11 @@
                                 'icon'=>'fa-icon-tasks',
                                 'url'=>array('/staff/admin')
                             ),
+                            array(
+                                'label'=>'Проблемы',
+                                'icon'=>'fa-icon-tasks',
+                                'url'=>array('/problem/admin')
+                            ),
 	                    ),
 	            )); ?>				
 			</div>
