@@ -42,6 +42,7 @@ class ProblemSolution extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'problems' => array(self::MANY_MANY, 'Problem', 'data_problem_solutions(solution_id, problem_id)'),
 		);
 	}
 
@@ -53,7 +54,7 @@ class ProblemSolution extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'problem_id' => 'Проблема',
-			'solution_comment' => 'Комментарий',
+			'solution_comment' => 'Решение',
 		);
 	}
 
@@ -82,6 +83,18 @@ class ProblemSolution extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function getSolutionsAndRecomendations() {
+	    $result = array();
+	    
+	    $solutions = $this->findAll();
+	    $result = array_merge($result, $solutions);
+	    
+	    $recommendations = ProblemRecommendation::model()->findAll();
+	    $result = array_merge($result, $recommendations);
+	    
+	    return $result;
 	}
 
 	/**

@@ -62,7 +62,6 @@ class ProblemRecommendationController extends Controller
 	public function actionCreate()
 	{
 		$model=new ProblemRecommendation;
-        $model->problem_id = $_GET['id'];
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -71,7 +70,7 @@ class ProblemRecommendationController extends Controller
 		{
 			$model->attributes=$_POST['ProblemRecommendation'];
 			if($model->save())
-				$this->redirect(array('/problem/view','id'=>$model->problem_id));
+                $this->redirect(array('/problemSolution/admin'));
 		}
 
 		$this->render('create',array(
@@ -95,7 +94,7 @@ class ProblemRecommendationController extends Controller
 		{
 			$model->attributes=$_POST['ProblemRecommendation'];
 			if($model->save())
-                $this->redirect(array('/problem/view','id'=>$model->problem_id));
+                $this->redirect(array('/problemSolution/admin'));
 		}
 
 		$this->render('update',array(

@@ -1,21 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "{{problem_recommendation}}".
+ * This is the model class for table "{{problem_recommendations}}".
  *
- * The followings are the available columns in table '{{problem_recommendation}}':
- * @property string $id
+ * The followings are the available columns in table '{{problem_recommendations}}':
+ * @property integer $id
  * @property integer $problem_id
- * @property string $recomendation_comment
+ * @property integer $recommendation_id
  */
-class ProblemRecommendation extends CActiveRecord
+class ProblemRecommendationsRelation extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{problem_recommendation}}';
+		return '{{problem_recommendations}}';
 	}
 
 	/**
@@ -26,11 +26,11 @@ class ProblemRecommendation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('problem_id', 'numerical', 'integerOnly'=>true),
-			array('recomendation_comment', 'safe'),
+			array('problem_id, recommendation_id', 'required'),
+			array('problem_id, recommendation_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, problem_id, recomendation_comment', 'safe', 'on'=>'search'),
+			array('id, problem_id, recommendation_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -42,7 +42,6 @@ class ProblemRecommendation extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-            'problems' => array(self::MANY_MANY, 'Problem', 'data_problem_recommendations(recommendation_id, problem_id)'),
 		);
 	}
 
@@ -53,8 +52,8 @@ class ProblemRecommendation extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'problem_id' => 'Проблема',
-			'recomendation_comment' => 'Рекомендация',
+			'problem_id' => 'Problem',
+			'recommendation_id' => 'Recommendation',
 		);
 	}
 
@@ -76,9 +75,9 @@ class ProblemRecommendation extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('problem_id',$this->problem_id);
-		$criteria->compare('recomendation_comment',$this->recomendation_comment,true);
+		$criteria->compare('recommendation_id',$this->recommendation_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -89,7 +88,7 @@ class ProblemRecommendation extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ProblemRecommendation the static model class
+	 * @return ProblemRecommendationsRelation the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

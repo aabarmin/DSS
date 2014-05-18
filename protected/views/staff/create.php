@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Управление сотрудниками','url'=>array('admin')),
+	array('label'=>'Назад','url'=>array('admin'),'active'=>true),
 );
 ?>
 

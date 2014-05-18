@@ -20,4 +20,20 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+    protected function beforeAction($action)
+    {
+        $log = new Log();
+        $log->user_name = Yii::app()->user->name;
+        $log->controller_name = get_class($this);
+        $log->controller_action = $action->getId();
+        if (array_key_exists('id', $_GET)) {
+            $log->object_id = $_GET['id'];
+        }
+        $log->save();
+
+        return true;
+    }
+
+
 }

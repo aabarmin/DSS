@@ -6,10 +6,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Управление таксономиями','url'=>array('admin')),
+	array('label'=>'Управление справочниками','url'=>array('admin'),'active'=>true),
 );
 ?>
 
-<h1>Редактирование таксономии <?php echo $model->title; ?></h1>
+<h1>Редактирование справочника <?php echo $model->title; ?></h1>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>

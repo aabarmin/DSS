@@ -15,6 +15,7 @@
 	<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.min.css" rel="stylesheet" />
 	<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style-responsive.min.css" rel="stylesheet" />
 	<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/retina.css" rel="stylesheet" />
+    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/custom.css" rel="stylesheet" />
 	<!-- end: CSS -->
 	
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->

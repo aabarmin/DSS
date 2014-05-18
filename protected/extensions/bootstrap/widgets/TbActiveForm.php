@@ -193,9 +193,9 @@ class TbActiveForm extends CActiveForm
 	 * @param array $htmlOptions additional HTML attributes
 	 * @return string the generated row
 	 */
-	public function textAreaRow($model, $attribute, $htmlOptions = array())
+	public function textAreaRow($model, $attribute, $htmlOptions = array(), $otherOptions = array())
 	{
-		return $this->inputRow(TbInput::TYPE_TEXTAREA, $model, $attribute, null, $htmlOptions);
+		return $this->inputRow(TbInput::TYPE_TEXTAREA, $model, $attribute, null, $htmlOptions, $otherOptions);
 	}
 
 	/**
@@ -484,17 +484,22 @@ class TbActiveForm extends CActiveForm
 	 * @param array $htmlOptions additional HTML attributes
 	 * @return string the generated row
 	 */
-	public function inputRow($type, $model, $attribute, $data = null, $htmlOptions = array())
+	public function inputRow($type, $model, $attribute, $data = null, $htmlOptions = array(), $otherOptions = array())
 	{
 		ob_start();
-		$this->getOwner()->widget($this->getInputClassName(), array(
+        if (is_null($otherOptions)) {
+            $otherOptions = array();
+        }
+
+        $resultArray = array_merge(array(
             'form'=>$this,
             'type'=>$type,
-			'model'=>$model,
-			'attribute'=>$attribute,
-			'data'=>$data,
-			'htmlOptions'=>$htmlOptions,
-		));
+            'model'=>$model,
+            'attribute'=>$attribute,
+            'data'=>$data,
+            'htmlOptions'=>$htmlOptions,
+        ), $otherOptions);
+		$this->getOwner()->widget($this->getInputClassName(), $resultArray);
 		return ob_get_clean();
 	}
 

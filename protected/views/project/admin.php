@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Добавить проект','url'=>array('create')),
+	array('label'=>'Добавить проект','url'=>array('create'), 'active'=>true),
 ); ?>
 
 <h1>Управление проектами</h1>
@@ -13,6 +13,7 @@ $this->menu=array(
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'project-grid',
 	'dataProvider'=>$model->search(),
+    'summaryText' => '',
 	'columns'=>array(
 		'id',
 		array(

@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Добавить сотрудника','url'=>array('create')),
+	array('label'=>'Добавить сотрудника','url'=>array('create'), 'active'=>true),
 );
 ?>
 
@@ -14,6 +14,7 @@ $this->menu=array(
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'staff-grid',
 	'dataProvider'=>$model->search(),
+    'summaryText' => '',
 	'columns'=>array(
 		'id',
 		'staff_first_name',

@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Создать таксономию','url'=>array('create')),
+	array('label'=>'Создать таксономию','url'=>array('create'), 'active'=>true),
 ); ?>
 
 <h1>Управление таксономиями</h1>
@@ -13,6 +13,7 @@ $this->menu=array(
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'taxonomy-grid',
 	'dataProvider'=>$model->search(),
+    'summaryText' => '',
 	'columns'=>array(
 		'id',
 		'title',

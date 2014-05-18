@@ -19,30 +19,41 @@
 	                    'items'=>array(
 	                    	array(
 	                        	'label'=>'Главная', 
-	                        	'icon'=>'fa-icon-tasks', 
+	                        	'icon'=>'fa-icon-main',
 	                        	'url'=>array('/')
 							),
 							array(
 	                        	'label'=>'Проекты', 
-	                        	'icon'=>'fa-icon-tasks', 
+	                        	'icon'=>'fa-icon-projects',
 	                        	'url'=>array('/project/admin')
 							),
-	                        array(
-	                        	'label'=>'Таксономия', 
-	                        	'icon'=>'fa-icon-tasks', 
-	                        	'url'=>array('/taxonomy/taxonomy/admin')
-							),
+                            array(
+                                'label'=>'Проблемы',
+                                'icon'=>'fa-icon-problems',
+                                'url'=>array('/problem/admin')
+                            ),
+                            array(
+                                'label' => 'Решения и рекомендации',
+                                'icon' => 'fa-icon-solution',
+                                'url' => array('/problemSolution/admin')
+                            ),
+                            array(
+                                'label'=>'Статистика',
+                                'icon'=>'fa-icon-stat',
+                                'url'=>array('/site/page', 'view' => 'statistic')
+                            ),
                             array(
                                 'label'=>'Сотрудники',
-                                'icon'=>'fa-icon-tasks',
+                                'icon'=>'fa-icon-people',
                                 'url'=>array('/staff/admin')
                             ),
                             array(
-                                'label'=>'Проблемы',
-                                'icon'=>'fa-icon-tasks',
-                                'url'=>array('/problem/admin')
-                            ),
-	                    ),
+	                        	'label'=>'Справочники',
+	                        	'icon'=>'fa-icon-settings',
+	                        	'url'=>array('/taxonomy/taxonomy/admin')
+							)
+
+	                    )
 	            )); ?>				
 			</div>
 			<a id="main-menu-toggle" class="hidden-phone open"><i class="fa-icon-reorder"></i></a>
@@ -55,7 +66,7 @@
 		      </div>
 		    </noscript> 
 		    <!-- start: Content -->
-			<div id="content" class="span11">
+			<div id="content" class="span11 dss-container">
 				<div class="row-fluid">
                     <?php $this->widget('bootstrap.widgets.TbMenu', array(
                         'type'=>'pills',
@@ -74,13 +85,6 @@
 		</div>
 		<!--/fluid-row-->		
 		<div class="clearfix"></div>
-		
-		<footer>
-			<p>
-				<span style="text-align:left;float:left">&copy; 2013 <a href="http://bootstrapmaster.com" alt="Bootstrap Themes">creativeLabs</a></span>
-				<span class="hidden-phone" style="text-align:right;float:right">Powered by: <a href="http://admintemplates.co" alt="Bootstrap Admin Templates">ACME Dashboard</a></span>
-			</p>
-		</footer>		
 	</div>
   <!--/.fluid-container-->  
   

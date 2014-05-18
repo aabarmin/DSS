@@ -5,13 +5,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Редактировать проект','url'=>array('update','id'=>$model->id)),
-	array('label'=>'Удалить проект','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Управление проектами','url'=>array('admin')),
+    array('label'=>'Назад','url'=>array('admin'), 'active'=>true),
+    array('label'=>'Редактировать проект','url'=>array('update','id'=>$model->id), 'itemOptions' => array('class' => 'dss-inactive-menu')),
+	array('label'=>'Удалить проект','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'), 'itemOptions' => array('class' => 'dss-delete-menu')),
+
 );
 ?>
-
-<h1><?php echo $model->project_title; ?></h1>
 
 <?php $this->widget('bootstrap.widgets.TbDetailView',array(
 	'data'=>$model,
@@ -43,9 +42,10 @@ $this->menu=array(
         <?php $this->widget('bootstrap.widgets.TbGridView', array(
             'id' => 'project_team',
             'dataProvider' => new CArrayDataProvider($model->team),
+            'hideHeader' => true,
+            'summaryText' => '',
             'columns' => array(
                 array(
-                    'name' => 'Участник',
                     'value' => '$data->staff_first_name." ".$data->staff_last_name'
                 )
             )
@@ -68,7 +68,8 @@ $this->menu=array(
                     'url' => array(
                         '/projectAttachment/create',
                         'id' => $model->id
-                    )
+                    ),
+                    'active'=>true
                 )
             ),
 
@@ -77,6 +78,8 @@ $this->menu=array(
         <?php $this->widget('bootstrap.widgets.TbGridView', array(
             'id' => 'project_files',
             'dataProvider' => new CArrayDataProvider($model->attachments),
+            'hideHeader' => true,
+            'summaryText' => '',
             'columns' => array(
                 array(
                     'name' => 'Вложение',
@@ -102,7 +105,8 @@ $this->menu=array(
                     'url' => array(
                         '/projectProblem/create',
                         'id' => $model->id
-                    )
+                    ),
+                    'active'=>true
                 )
             ),
         )); ?>
@@ -110,6 +114,8 @@ $this->menu=array(
         <?php $this->widget('bootstrap.widgets.TbGridView', array(
             'id' => 'project_problems',
             'dataProvider' => new CArrayDataProvider($model->problems),
+            'hideHeader' => true,
+            'summaryText' => '',
             'columns' => array(
                 array(
                     'name' => 'Комментарий',

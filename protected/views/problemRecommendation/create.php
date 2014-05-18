@@ -5,10 +5,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Назад','url'=>array('/problem/view/', 'id' => $model->problem_id)),
+	array('label'=>'Назад','url'=>array('/problem/view/', 'id' => $model->problem_id),'active'=>true),
 );
 ?>
-
-<h1>Добавление рекомендациями</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

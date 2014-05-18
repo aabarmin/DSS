@@ -172,8 +172,6 @@ class MainSidebarWidget extends CWidget {
 		</div>
 	</div>
 			
-</div>
-	<a id="widgets-area-button" class="hidden-tablet hidden-phone open"><i class="fa-icon-reorder"></i></a>		
-		';
+</div>';
 	}
 }

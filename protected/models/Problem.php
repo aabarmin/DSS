@@ -47,8 +47,9 @@ class Problem extends CActiveRecord
         return array(
             'type' => array(self::BELONGS_TO, 'TaxonomyTerm', 'problem_type_id'),
             'priority' => array(self::BELONGS_TO, 'TaxonomyTerm', 'problem_priority_id'),
-            'recommendations' => array(self::HAS_MANY, 'ProblemRecommendation', 'problem_id'),
-            'solutions' => array(self::HAS_MANY, 'ProblemSolution', 'problem_id'),
+            'recommendations' => array(self::MANY_MANY, 'ProblemRecommendation', 'data_problem_recommendations(problem_id, recommendation_id)'),
+            'solutions' => array(self::MANY_MANY, 'ProblemSolution', 'data_problem_solutions(problem_id, solution_id)'),
+            'projects' => array(self::MANY_MANY, "Project", "data_project_problem(problem_id, project_id)")
         );
 	}
 

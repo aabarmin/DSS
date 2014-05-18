@@ -280,7 +280,7 @@ class MainNavbarWidget extends CWidget {
 			'class' => "nav pull-right"
 		));
 		// $this->displayMenuInformationNotifications();
-		$this->displayMenuInformationSettings();
+		// $this->displayMenuInformationSettings();
 		// $this->displayMenuInformationUser();
 		echo CHtml::closeTag("ul");
 		echo CHtml::closeTag("div");

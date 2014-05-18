@@ -1,0 +1,79 @@
+.fa-icon-projects{
+    background-image: url("../img/Calendar.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height:48px;
+    width:48px;
+}
+
+.fa-icon-settings{
+    background-image: url("../img/Database.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height:48px;
+    width:48px;
+}
+
+.fa-icon-people{
+    background-image: url("../img/User.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height:48px;
+    width:48px;
+}
+
+.fa-icon-problems{
+    background-image: url("../img/Dashboard.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height:48px;
+    width:48px;
+}
+
+.fa-icon-main{
+    background-image: url("../img/Compass.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height:48px;
+    width:48px;
+}
+
+.fa-icon-stat{
+    background-image: url("../img/Chart.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height:48px;
+    width:48px;
+}
+.fa-icon-solution{
+    background-image: url("../img/Bookmark.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height:48px;
+    width:48px;
+}
+
+.dss-container .nav li.dss-inactive-menu-new a{
+    background: #2980b9;
+    color: #fff;
+}
+
+.dss-container .nav li.active a{
+    background: #2a9758;
+    color: #fff;
+}
+
+.dss-container button.btn {
+    background: #2a9758;
+    color: #fff;
+}
+
+.dss-container .nav li.dss-inactive-menu a{
+    background: #f1c40f;
+    color: #fff;
+}
+
+.dss-container .nav li.dss-delete-menu a{
+    background: #c0392b;
+    color: #fff;
+}

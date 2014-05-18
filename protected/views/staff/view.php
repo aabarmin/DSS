@@ -5,10 +5,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Добавить сотрудника','url'=>array('create')),
-	array('label'=>'Редактировать сотрудника','url'=>array('update','id'=>$model->id)),
-	array('label'=>'Удалить сотрудника','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Управление сотрудниками','url'=>array('admin')),
+    array('label'=>'Назад','url'=>array('admin'), 'active'=>true),
+    array('label'=>'Добавить сотрудника','url'=>array('create'), 'itemOptions' => array('class' => 'dss-inactive-menu')),
+	array('label'=>'Редактировать сотрудника','url'=>array('update','id'=>$model->id), 'itemOptions' => array('class' => 'dss-inactive-menu')),
+	array('label'=>'Удалить сотрудника','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),'itemOptions' => array('class' => 'dss-delete-menu')),
 );
 ?>
 

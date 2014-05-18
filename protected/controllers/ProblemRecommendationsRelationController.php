@@ -1,6 +1,6 @@
 <?php
 
-class ProblemSolutionController extends Controller
+class ProblemRecommendationsRelationController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -61,16 +61,17 @@ class ProblemSolutionController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new ProblemSolution;
+		$model=new ProblemRecommendationsRelation;
+        $model->problem_id = $_GET["id"];
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['ProblemSolution']))
+		if(isset($_POST['ProblemRecommendationsRelation']))
 		{
-			$model->attributes=$_POST['ProblemSolution'];
+			$model->attributes=$_POST['ProblemRecommendationsRelation'];
 			if($model->save())
-                $this->redirect(array('/problemSolution/admin'));
+				$this->redirect(array('/problem/view','id'=>$model->problem_id));
 		}
 
 		$this->render('create',array(
@@ -90,11 +91,11 @@ class ProblemSolutionController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['ProblemSolution']))
+		if(isset($_POST['ProblemRecommendationsRelation']))
 		{
-			$model->attributes=$_POST['ProblemSolution'];
+			$model->attributes=$_POST['ProblemRecommendationsRelation'];
 			if($model->save())
-                $this->redirect(array('/problemSolution/admin'));
+                $this->redirect(array('/problem/view','id'=>$model->problem_id));
 		}
 
 		$this->render('update',array(
@@ -127,7 +128,7 @@ class ProblemSolutionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ProblemSolution');
+		$dataProvider=new CActiveDataProvider('ProblemRecommendationsRelation');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -138,10 +139,10 @@ class ProblemSolutionController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new ProblemSolution('search');
+		$model=new ProblemRecommendationsRelation('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['ProblemSolution']))
-			$model->attributes=$_GET['ProblemSolution'];
+		if(isset($_GET['ProblemRecommendationsRelation']))
+			$model->attributes=$_GET['ProblemRecommendationsRelation'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -155,7 +156,7 @@ class ProblemSolutionController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=ProblemSolution::model()->findByPk($id);
+		$model=ProblemRecommendationsRelation::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -167,7 +168,7 @@ class ProblemSolutionController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='problem-solution-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='problem-recommendations-relation-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

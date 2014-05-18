@@ -6,9 +6,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Добавить Problem','url'=>array('create')),
-	array('label'=>'Просмотреть Problem','url'=>array('view','id'=>$model->id)),
-	array('label'=>'Управление Problem','url'=>array('admin')),
+    array('label'=>'Назад','url'=>array('admin'), 'active'=>true),
+    array('label'=>'Добавить проблему','url'=>array('create'),'itemOptions' => array('class' => 'dss-inactive-menu')),
 );
 ?>
 

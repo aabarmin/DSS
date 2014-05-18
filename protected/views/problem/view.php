@@ -5,18 +5,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-    array('label'=>'Назад','url'=>array('admin')),
-	array('label'=>'Редактировать','url'=>array('update','id'=>$model->id)),
-	array('label'=>'Удалить','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+    array('label'=>'Назад','url'=>array('admin'),'active'=>true),
+	array('label'=>'Редактировать','url'=>array('update','id'=>$model->id),'itemOptions' => array('class' => 'dss-inactive-menu')),
+	array('label'=>'Удалить','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'), 'itemOptions' => array('class' => 'dss-delete-menu')),
 );
 ?>
-
-<h1>Просмотр проблемы</h1>
 
 <?php $this->widget('bootstrap.widgets.TbDetailView',array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
         array(
             'label' => 'Тип проблемы',
             'value' => !is_null($model->type) ? $model->type->term_name : "",
@@ -43,9 +40,10 @@ $this->menu=array(
                 array(
                     'label' => 'Добавить рекомендацию',
                     'url' => array(
-                        '/problemRecommendation/create',
+                        '/ProblemRecommendationsRelation/create',
                         'id' => $model->id
-                    )
+                    ),
+                    'active'=>true
                 )
             ),
 
@@ -53,8 +51,9 @@ $this->menu=array(
         <?php $this->widget('bootstrap.widgets.TbGridView', array(
             'id' => 'project_team',
             'dataProvider' => new CArrayDataProvider($model->recommendations),
+            'hideHeader' => true,
+            'summaryText' => '',
             'columns' => array(
-                'id',
                 array(
                     'name' => 'Комментарий',
                     'value' => '$data->recomendation_comment'
@@ -77,9 +76,10 @@ $this->menu=array(
                 array(
                     'label' => 'Добавить решение',
                     'url' => array(
-                        '/problemSolution/create',
+                        '/ProblemSolutionsRelation/create',
                         'id' => $model->id
-                    )
+                    ),
+                    'active'=>true
                 )
             ),
 
@@ -87,8 +87,9 @@ $this->menu=array(
         <?php $this->widget('bootstrap.widgets.TbGridView', array(
             'id' => 'project_team',
             'dataProvider' => new CArrayDataProvider($model->solutions),
+            'hideHeader' => true,
+            'summaryText' => '',
             'columns' => array(
-                'id',
                 array(
                     'name' => 'Комментарий',
                     'value' => '$data->solution_comment'

@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Добавить проблему','url'=>array('create')),
+	array('label'=>'Добавить проблему','url'=>array('create'), 'active'=>true),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -29,7 +29,6 @@ $('.search-form form').submit(function(){
 или <b>=</b>) в начале каждого указанного для поиска значения.
 </p>
 
-<?php echo CHtml::link('Расширенный поиск','#',array('class'=>'search-button btn')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -39,6 +38,7 @@ $('.search-form form').submit(function(){
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'problem-grid',
 	'dataProvider'=>$model->search(),
+    'summaryText' => '',
 	'filter'=>$model,
 	'columns'=>array(
         array(
